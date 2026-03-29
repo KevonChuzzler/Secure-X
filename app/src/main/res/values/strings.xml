@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">NaviPark</string>
+    <string name="welcome_message">Welcome to NaviPark\nSmart Parking, Simplified</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="book_spot">Book Spot</string>
+    <string name="navigate">Navigate</string>
+    <string name="pay_now">Pay Now</string>
+</resources>
