@@ -1,0 +1,6 @@
+com.navipark.app.test.app-androidTest-0 C:\Sites\10\NaviPark\app\build\generated\res\resValues\androidTest\debug
+com.navipark.app.test.app-mergeDebugAndroidTestResources-1 C:\Sites\10\NaviPark\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.navipark.app.test.app-mergeDebugAndroidTestResources-2 C:\Sites\10\NaviPark\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.navipark.app.test.app-debugAndroidTest-3 C:\Sites\10\NaviPark\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources
+com.navipark.app.test.app-core-1.5.0-4 C:\Users\Asus i5\.gradle\caches\9.0.0\transforms\12f0949db14e050db7a77787b8a07adc\transformed\core-1.5.0\res
+com.navipark.app.test.app-annotation-experimental-1.3.0-5 C:\Users\Asus i5\.gradle\caches\9.0.0\transforms\c4bc5e9ffa391460d78473c72674ac3b\transformed\annotation-experimental-1.3.0\res
