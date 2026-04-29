@@ -20,8 +20,8 @@
         "source": "C:\\Users\\Asus i5\\.gradle\\daemon\\9.0.0\\com.navipark.app-main-6:\\layout\\activity_booking.xml"
     },
     {
-        "merged": "com.navipark.app-debug-4:/layout_activity_my_cars.xml.flat",
-        "source": "com.navipark.app-main-6:/layout/activity_my_cars.xml"
+        "merged": "C:\\Users\\Asus i5\\.gradle\\daemon\\9.0.0\\com.navipark.app-debug-4:\\layout_activity_spot_selection.xml.flat",
+        "source": "C:\\Users\\Asus i5\\.gradle\\daemon\\9.0.0\\com.navipark.app-main-6:\\layout\\activity_spot_selection.xml"
     },
     {
         "merged": "C:\\Users\\Asus i5\\.gradle\\daemon\\9.0.0\\com.navipark.app-debug-4:\\layout_activity_onboarding_car.xml.flat",
@@ -34,6 +34,14 @@
     {
         "merged": "C:\\Users\\Asus i5\\.gradle\\daemon\\9.0.0\\com.navipark.app-debug-4:\\layout_activity_login.xml.flat",
         "source": "C:\\Users\\Asus i5\\.gradle\\daemon\\9.0.0\\com.navipark.app-main-6:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\Asus i5\\.gradle\\daemon\\9.0.0\\com.navipark.app-debug-4:\\layout_activity_booking_confirmation.xml.flat",
+        "source": "C:\\Users\\Asus i5\\.gradle\\daemon\\9.0.0\\com.navipark.app-main-6:\\layout\\activity_booking_confirmation.xml"
+    },
+    {
+        "merged": "com.navipark.app-debug-4:/layout_activity_payment.xml.flat",
+        "source": "com.navipark.app-main-6:/layout/activity_payment.xml"
     },
     {
         "merged": "C:\\Users\\Asus i5\\.gradle\\daemon\\9.0.0\\com.navipark.app-debug-4:\\layout_activity_home.xml.flat",

@@ -3175,6 +3175,7 @@ id bounceEnd
 id bounceStart
 id btnAddAnother
 id btnAddCar
+id btnBackToHome
 id btnConfirmBooking
 id btnExtend1Hour
 id btnFinish
@@ -3184,7 +3185,7 @@ id btnMyCars
 id btnNext
 id btnNoThanks
 id btnParkNow
-id btnPay
+id btnProceedBooking
 id btnProfile
 id btnRegister
 id btnSaveProfile
@@ -3271,12 +3272,9 @@ id end
 id endToStart
 id enterAlways
 id enterAlwaysCollapsed
-id etCardNumber
 id etCity
 id etColor
-id etCvv
 id etEmail
-id etExpiry
 id etMake
 id etModel
 id etName
@@ -3312,6 +3310,7 @@ id ghost_view_holder
 id gone
 id graph
 id graph_wrap
+id gridSpots
 id group_divider
 id grouping
 id groups
@@ -3585,8 +3584,15 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tvLocationName
+id tvOrderDate
+id tvOrderDuration
+id tvOrderLocation
+id tvOrderSpot
+id tvOrderTime
+id tvOrderTotal
 id tvSelectedBay
-id tvTotalAmount
+id tvSelectedSpot
 id unchecked
 id uniform
 id unlabeled
@@ -3601,6 +3607,7 @@ id view_tree_saved_state_registry_owner
 id view_tree_view_model_store_owner
 id visible
 id visible_removing_fragment_view_tag
+id webView
 id west
 id withText
 id with_icon
@@ -3725,6 +3732,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_booking
+layout activity_booking_confirmation
 layout activity_extend_time
 layout activity_home
 layout activity_login
@@ -3735,6 +3743,7 @@ layout activity_onboarding_profile
 layout activity_park
 layout activity_payment
 layout activity_profile
+layout activity_spot_selection
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog

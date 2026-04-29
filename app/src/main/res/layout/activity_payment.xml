@@ -2,78 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="32dp"
-    android:background="@color/white"
-    android:gravity="center_horizontal">
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Payment Prototype"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="@color/primary"
-        android:layout_marginBottom="32dp"/>
-
-    <TextView
-        android:id="@+id/tvTotalAmount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Total Amount: R 0.00"
-        android:textSize="20sp"
-        android:layout_marginBottom="32dp"/>
-
-    <!-- Form disabled since it's just a prototype -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="(Mock Payment Form)"
-        android:textStyle="italic"
-        android:layout_marginBottom="16dp"/>
-
-    <EditText
-        android:id="@+id/etCardNumber"
+    <WebView
+        android:id="@+id/webView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Card Number"
-        android:inputType="number"
-        android:minHeight="48dp"
-        android:enabled="false"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="16dp">
-        
-        <EditText
-            android:id="@+id/etExpiry"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="MM/YY"
-            android:minHeight="48dp"
-            android:layout_marginEnd="8dp"
-            android:enabled="false"/>
-            
-        <EditText
-            android:id="@+id/etCvv"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="CVV"
-            android:inputType="numberPassword"
-            android:minHeight="48dp"
-            android:enabled="false"/>
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/btnPay"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Confirm Mock Payment"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="@color/primary"/>
+        android:layout_height="match_parent" />
 
 </LinearLayout>

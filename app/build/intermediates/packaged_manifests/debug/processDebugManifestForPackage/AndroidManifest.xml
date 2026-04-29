@@ -72,6 +72,12 @@
         <activity
             android:name="com.navipark.app.PaymentActivity"
             android:exported="false" />
+        <activity
+            android:name="com.navipark.app.SpotSelectionActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.navipark.app.BookingConfirmationActivity"
+            android:exported="false" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"

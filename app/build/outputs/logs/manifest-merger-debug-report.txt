@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:2:1-39:12
-INJECTED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:2:1-39:12
-INJECTED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:2:1-39:12
-INJECTED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:2:1-39:12
+ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:2:1-41:12
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\Asus i5\.gradle\caches\9.0.0\transforms\768efe61768b3a7f8ebaabadb5165a16\transformed\material-1.11.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Asus i5\.gradle\caches\9.0.0\transforms\5d08896ec80d09b2944fa548bb8a5f8a\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\Asus i5\.gradle\caches\9.0.0\transforms\74809459de78d18c71237be5b8f661fd\transformed\appcompat-resources-1.6.1\AndroidManifest.xml:17:1-22:12
@@ -66,8 +66,8 @@ ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:6:5-67
 	android:name
 		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:6:22-64
 application
-ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:8:5-37:19
-INJECTED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:8:5-37:19
+ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:8:5-39:19
+INJECTED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:8:5-39:19
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\Asus i5\.gradle\caches\9.0.0\transforms\768efe61768b3a7f8ebaabadb5165a16\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\Asus i5\.gradle\caches\9.0.0\transforms\768efe61768b3a7f8ebaabadb5165a16\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Asus i5\.gradle\caches\9.0.0\transforms\5d08896ec80d09b2944fa548bb8a5f8a\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -182,6 +182,18 @@ ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:35:9-78
 		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:35:51-75
 	android:name
 		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:35:19-50
+activity#com.navipark.app.SpotSelectionActivity
+ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:36:9-84
+	android:exported
+		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:36:57-81
+	android:name
+		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:36:19-56
+activity#com.navipark.app.BookingConfirmationActivity
+ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:37:9-90
+	android:exported
+		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:37:63-87
+	android:name
+		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:37:19-62
 uses-sdk
 INJECTED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml

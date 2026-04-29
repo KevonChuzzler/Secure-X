@@ -19,10 +19,14 @@ import java.util.Calendar;
 
 public class BookingActivity extends AppCompatActivity {
     
+    private boolean dateSelected = false;
+    private boolean timeSelected = false;
     private String selectedDate = "";
     private String selectedTime = "";
     private Calendar bookingCalendar = Calendar.getInstance();
-    private String selectedBay = "Unknown Bay";
+    private String selectedBay = "";
+    private String selectedLocation = "";
+    private String selectedSpot = "";
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,10 +34,14 @@ public class BookingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_booking);
         
         selectedBay = getIntent().getStringExtra("selected_bay");
+        selectedLocation = getIntent().getStringExtra("selected_location");
+        selectedSpot = getIntent().getStringExtra("selected_spot");
         if (selectedBay == null) selectedBay = "Bay 1";
+        if (selectedLocation == null) selectedLocation = "";
+        if (selectedSpot == null) selectedSpot = "";
         
         TextView tvSelectedBay = findViewById(R.id.tvSelectedBay);
-        tvSelectedBay.setText("Selected Location: " + selectedBay);
+        tvSelectedBay.setText("Booking: " + selectedBay);
         
         Button btnSelectDate = findViewById(R.id.btnSelectDate);
         Button btnSelectTime = findViewById(R.id.btnSelectTime);
@@ -46,35 +54,45 @@ public class BookingActivity extends AppCompatActivity {
                 bookingCalendar.set(Calendar.MONTH, month);
                 bookingCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
                 selectedDate = dayOfMonth + "/" + (month + 1) + "/" + year;
+                dateSelected = true;
                 btnSelectDate.setText(selectedDate);
             }, bookingCalendar.get(Calendar.YEAR), bookingCalendar.get(Calendar.MONTH), bookingCalendar.get(Calendar.DAY_OF_MONTH)).show();
         });
         
         btnSelectTime.setOnClickListener(v -> {
+            if (!dateSelected) {
+                Toast.makeText(this, "Please select a date first!", Toast.LENGTH_SHORT).show();
+                return;
+            }
             new TimePickerDialog(this, (view, hourOfDay, minute) -> {
                 bookingCalendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
                 bookingCalendar.set(Calendar.MINUTE, minute);
                 selectedTime = hourOfDay + ":" + String.format("%02d", minute);
+                timeSelected = true;
                 btnSelectTime.setText(selectedTime);
             }, bookingCalendar.get(Calendar.HOUR_OF_DAY), bookingCalendar.get(Calendar.MINUTE), true).show();
         });
         
         btnConfirmBooking.setOnClickListener(v -> {
-            if (selectedDate.isEmpty() || selectedTime.isEmpty()) {
-                Toast.makeText(this, "Please select Date and Time", Toast.LENGTH_SHORT).show();
+            // Step-by-step validation with clear messages
+            if (!dateSelected) {
+                Toast.makeText(this, "Please choose a date before proceeding.", Toast.LENGTH_LONG).show();
+                return;
+            }
+            if (!timeSelected) {
+                Toast.makeText(this, "Please choose a time before proceeding.", Toast.LENGTH_LONG).show();
                 return;
             }
             
-            int durationMins = 30; // Default
-            String selectedDuration = spnDuration.getSelectedItem().toString();
-            switch (selectedDuration) {
-                case "30 minutes": durationMins = 30; break;
-                case "1 hour": durationMins = 60; break;
-                case "1.5 hours": durationMins = 90; break;
-                case "2 hours": durationMins = 120; break;
-                case "2.5 hours": durationMins = 150; break;
-                case "3 hours": durationMins = 180; break;
+            // Check date is not in the past
+            Calendar now = Calendar.getInstance();
+            if (bookingCalendar.before(now)) {
+                Toast.makeText(this, "You cannot book in the past! Please select a future date and time.", Toast.LENGTH_LONG).show();
+                return;
             }
+            
+            String selectedDuration = spnDuration.getSelectedItem().toString();
+            int durationMins = parseDuration(selectedDuration);
             
             double totalPrice = calculatePrice(bookingCalendar, durationMins);
             
@@ -92,9 +110,24 @@ public class BookingActivity extends AppCompatActivity {
             Intent intent = new Intent(BookingActivity.this, PaymentActivity.class);
             intent.putExtra("date", selectedDate);
             intent.putExtra("time", selectedTime);
+            intent.putExtra("duration", selectedDuration);
+            intent.putExtra("location", selectedLocation);
+            intent.putExtra("spot", selectedSpot);
             intent.putExtra("totalPrice", (int) Math.round(totalPrice));
             startActivity(intent);
         });
+    }
+
+    private int parseDuration(String durationStr) {
+        switch (durationStr) {
+            case "30 minutes": return 30;
+            case "1 hour": return 60;
+            case "1.5 hours": return 90;
+            case "2 hours": return 120;
+            case "2.5 hours": return 150;
+            case "3 hours": return 180;
+            default: return 30;
+        }
     }
 
     private double calculatePrice(Calendar startCal, int totalMinutes) {
@@ -146,8 +179,6 @@ public class BookingActivity extends AppCompatActivity {
         }
         setAlarm(alarmManager, reminder5.getTimeInMillis(), 2, "Your parking time ends in 5 minutes! Tap to extend.", true);
         setAlarm(alarmManager, testReminder.getTimeInMillis(), 3, "[TEST] Your parking time is almost up! Tap to extend.", true);
-        
-        Toast.makeText(this, "Reminders Scheduled!", Toast.LENGTH_SHORT).show();
     }
 
     private void setAlarm(AlarmManager alarmManager, long triggerAtMillis, int requestCode, String message, boolean isExtendable) {

@@ -28,8 +28,8 @@ public class ParkActivity extends AppCompatActivity {
         
         lvLocations.setOnItemClickListener((parent, view, position, id) -> {
             String selectedLocation = locations.get(position).split(" - ")[0];
-            Intent intent = new Intent(ParkActivity.this, BookingActivity.class);
-            intent.putExtra("selected_bay", selectedLocation);
+            Intent intent = new Intent(ParkActivity.this, SpotSelectionActivity.class);
+            intent.putExtra("selected_location", selectedLocation);
             startActivity(intent);
         });
     }

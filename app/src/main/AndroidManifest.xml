@@ -33,6 +33,8 @@
         <activity android:name=".HomeActivity" android:exported="false" />
         <activity android:name=".BookingActivity" android:exported="false" />
         <activity android:name=".PaymentActivity" android:exported="false" />
+        <activity android:name=".SpotSelectionActivity" android:exported="false" />
+        <activity android:name=".BookingConfirmationActivity" android:exported="false" />
         
     </application>
 
