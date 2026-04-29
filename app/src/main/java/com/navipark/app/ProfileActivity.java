@@ -1,6 +1,7 @@
 package com.navipark.app;
 
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,11 +27,17 @@ public class ProfileActivity extends AppCompatActivity {
         Button btnSaveProfile = findViewById(R.id.btnSaveProfile);
         
         etProfileEmail.setText(userEmail);
-        etProfilePhone.setText(dbHelper.getPhone(userEmail));
+        
+        Cursor cursor = dbHelper.getUserDetails(userEmail);
+        if (cursor.moveToFirst()) {
+            String phone = cursor.getString(cursor.getColumnIndexOrThrow("phone"));
+            etProfilePhone.setText(phone != null ? phone : "");
+        }
+        cursor.close();
         
         btnSaveProfile.setOnClickListener(v -> {
             String phone = etProfilePhone.getText().toString();
-            if (dbHelper.updatePhone(userEmail, phone)) {
+            if (dbHelper.updateProfile(userEmail, phone, null, null, null)) {
                 Toast.makeText(this, "Profile updated successfully!", Toast.LENGTH_SHORT).show();
                 finish();
             } else {

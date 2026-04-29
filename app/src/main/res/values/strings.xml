@@ -3,6 +3,19 @@
     <string name="welcome_message">Welcome to NaviPark\nSmart Parking, Simplified</string>
     <string name="login">Login</string>
     <string name="register">Register</string>
+    <string-array name="vehicle_types">
+        <item>Car</item>
+        <item>Motorbike</item>
+        <item>Bakkie</item>
+    </string-array>
+    <string-array name="duration_options">
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>1.5 hours</item>
+        <item>2 hours</item>
+        <item>2.5 hours</item>
+        <item>3 hours</item>
+    </string-array>
     <string name="email_hint">Email</string>
     <string name="password_hint">Password</string>
     <string name="book_spot">Book Spot</string>

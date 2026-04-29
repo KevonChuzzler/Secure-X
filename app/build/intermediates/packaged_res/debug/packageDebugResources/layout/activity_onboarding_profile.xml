@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="32dp"
+    android:background="@color/white">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome!"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/primary"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Let's get your details set up."
+        android:textSize="16sp"
+        android:layout_marginBottom="32dp"/>
+
+    <EditText android:id="@+id/etName" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="First Name" android:minHeight="48dp" android:layout_marginBottom="16dp"/>
+    <EditText android:id="@+id/etSurname" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Surname" android:minHeight="48dp" android:layout_marginBottom="16dp"/>
+    <EditText android:id="@+id/etCity" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="City" android:minHeight="48dp" android:layout_marginBottom="16dp"/>
+    <EditText android:id="@+id/etEmail" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Email Address" android:minHeight="48dp" android:layout_marginBottom="16dp" android:enabled="false"/>
+    <EditText android:id="@+id/etPhone" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Phone Number" android:inputType="phone" android:minHeight="48dp" android:layout_marginBottom="32dp"/>
+
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Next Step: Vehicles"
+        android:backgroundTint="@color/accent"
+        android:textColor="@color/black"/>
+
+</LinearLayout>

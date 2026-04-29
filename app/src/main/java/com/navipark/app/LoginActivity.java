@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +22,7 @@ public class LoginActivity extends AppCompatActivity {
         
         EditText etEmail = findViewById(R.id.etEmail);
         EditText etPassword = findViewById(R.id.etPassword);
+        CheckBox cbRememberMe = findViewById(R.id.cbRememberMe);
         Button btnLogin = findViewById(R.id.btnLogin);
         Button btnRegister = findViewById(R.id.btnRegister);
         Button btnGoogleLogin = findViewById(R.id.btnGoogleLogin);
@@ -35,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
             }
             
             if (dbHelper.checkUser(email, password)) {
-                loginSuccess(email);
+                loginSuccess(email, cbRememberMe.isChecked(), false);
             } else {
                 Toast.makeText(this, "Invalid credentials", Toast.LENGTH_SHORT).show();
             }
@@ -51,8 +53,8 @@ public class LoginActivity extends AppCompatActivity {
             }
             
             if (dbHelper.registerUser(email, password)) {
-                Toast.makeText(this, "Registration Successful! Logging in...", Toast.LENGTH_SHORT).show();
-                loginSuccess(email);
+                Toast.makeText(this, "Registration Successful!", Toast.LENGTH_SHORT).show();
+                loginSuccess(email, cbRememberMe.isChecked(), true);
             } else {
                 Toast.makeText(this, "User already exists or error occurred", Toast.LENGTH_SHORT).show();
             }
@@ -60,17 +62,22 @@ public class LoginActivity extends AppCompatActivity {
         
         btnGoogleLogin.setOnClickListener(v -> {
             Toast.makeText(this, "Google Sign-In verified.", Toast.LENGTH_SHORT).show();
-            loginSuccess("google_user@example.com");
+            loginSuccess("google_user@example.com", cbRememberMe.isChecked(), false);
         });
     }
 
-    private void loginSuccess(String email) {
+    private void loginSuccess(String email, boolean rememberMe, boolean isNewRegistration) {
         SharedPreferences.Editor editor = getSharedPreferences("NaviParkPrefs", MODE_PRIVATE).edit();
         editor.putBoolean("isLoggedIn", true);
+        editor.putBoolean("rememberMe", rememberMe);
         editor.putString("email", email);
         editor.apply();
         
-        startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+        if (isNewRegistration) {
+            startActivity(new Intent(LoginActivity.this, OnboardingProfileActivity.class));
+        } else {
+            startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+        }
         finish();
     }
 }

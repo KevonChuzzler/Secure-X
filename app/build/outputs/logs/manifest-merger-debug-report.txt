@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:2:1-31:12
+ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:2:1-39:12
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\Asus i5\.gradle\caches\9.0.0\transforms\768efe61768b3a7f8ebaabadb5165a16\transformed\material-1.11.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Asus i5\.gradle\caches\9.0.0\transforms\5d08896ec80d09b2944fa548bb8a5f8a\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\Asus i5\.gradle\caches\9.0.0\transforms\74809459de78d18c71237be5b8f661fd\transformed\appcompat-resources-1.6.1\AndroidManifest.xml:17:1-22:12
@@ -53,9 +53,21 @@ MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\Asus i5
 		INJECTED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.POST_NOTIFICATIONS
+ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:4:5-77
+	android:name
+		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:4:22-74
+uses-permission#android.permission.SCHEDULE_EXACT_ALARM
+ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:5:5-79
+	android:name
+		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:5:22-76
+uses-permission#android.permission.INTERNET
+ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:6:5-67
+	android:name
+		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:6:22-64
 application
-ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:4:5-29:19
-INJECTED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:4:5-29:19
+ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:8:5-37:19
+INJECTED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:8:5-37:19
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\Asus i5\.gradle\caches\9.0.0\transforms\768efe61768b3a7f8ebaabadb5165a16\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\Asus i5\.gradle\caches\9.0.0\transforms\768efe61768b3a7f8ebaabadb5165a16\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Asus i5\.gradle\caches\9.0.0\transforms\5d08896ec80d09b2944fa548bb8a5f8a\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -77,79 +89,99 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Asus i5\.gradle\ca
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.9.0] C:\Users\Asus i5\.gradle\caches\9.0.0\transforms\b467069c40839911f1d0b9e963edbf69\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:8:9-35
+		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:13:9-35
 	android:label
-		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:7:9-41
+		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:11:9-41
+	android:roundIcon
+		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:12:9-63
 	android:icon
-		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:6:9-58
+		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:10:9-58
 	android:allowBackup
-		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:5:9-35
+		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:9:9-35
 	android:theme
-		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:9:9-46
+		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:14:9-46
 activity#com.navipark.app.MainActivity
-ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:11:9-18:20
+ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:16:9-23:20
 	android:exported
-		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:13:13-36
+		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:18:13-36
 	android:name
-		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:12:13-41
+		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:17:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:14:13-17:29
+ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:19:13-22:29
 action#android.intent.action.MAIN
-ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:15:17-69
+ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:20:17-69
 	android:name
-		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:15:25-66
+		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:20:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:16:17-77
+ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:21:17-77
 	android:name
-		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:16:27-74
+		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:21:27-74
 activity#com.navipark.app.LoginActivity
-ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:20:9-76
+ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:25:9-76
 	android:exported
-		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:20:49-73
+		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:25:49-73
 	android:name
-		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:20:19-48
+		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:25:19-48
 activity#com.navipark.app.ExtendTimeActivity
-ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:21:9-81
+ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:26:9-81
 	android:exported
-		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:21:54-78
+		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:26:54-78
 	android:name
-		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:21:19-53
+		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:26:19-53
 activity#com.navipark.app.ProfileActivity
-ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:22:9-78
-	android:exported
-		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:22:51-75
-	android:name
-		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:22:19-50
-activity#com.navipark.app.MyCarsActivity
-ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:23:9-77
-	android:exported
-		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:23:50-74
-	android:name
-		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:23:19-49
-receiver#com.navipark.app.NotificationReceiver
-ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:24:9-83
-	android:exported
-		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:24:56-80
-	android:name
-		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:24:19-55
-activity#com.navipark.app.HomeActivity
-ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:25:9-75
-	android:exported
-		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:25:48-72
-	android:name
-		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:25:19-47
-activity#com.navipark.app.BookingActivity
-ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:26:9-78
-	android:exported
-		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:26:51-75
-	android:name
-		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:26:19-50
-activity#com.navipark.app.PaymentActivity
 ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:27:9-78
 	android:exported
 		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:27:51-75
 	android:name
 		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:27:19-50
+activity#com.navipark.app.MyCarsActivity
+ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:28:9-77
+	android:exported
+		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:28:50-74
+	android:name
+		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:28:19-49
+activity#com.navipark.app.OnboardingProfileActivity
+ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:29:9-88
+	android:exported
+		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:29:61-85
+	android:name
+		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:29:19-60
+activity#com.navipark.app.OnboardingCarActivity
+ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:30:9-84
+	android:exported
+		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:30:57-81
+	android:name
+		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:30:19-56
+activity#com.navipark.app.ParkActivity
+ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:31:9-75
+	android:exported
+		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:31:48-72
+	android:name
+		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:31:19-47
+receiver#com.navipark.app.NotificationReceiver
+ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:32:9-83
+	android:exported
+		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:32:56-80
+	android:name
+		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:32:19-55
+activity#com.navipark.app.HomeActivity
+ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:33:9-75
+	android:exported
+		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:33:48-72
+	android:name
+		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:33:19-47
+activity#com.navipark.app.BookingActivity
+ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:34:9-78
+	android:exported
+		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:34:51-75
+	android:name
+		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:34:19-50
+activity#com.navipark.app.PaymentActivity
+ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:35:9-78
+	android:exported
+		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:35:51-75
+	android:name
+		ADDED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml:35:19-50
 uses-sdk
 INJECTED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Sites\10\NaviPark\app\src\main\AndroidManifest.xml

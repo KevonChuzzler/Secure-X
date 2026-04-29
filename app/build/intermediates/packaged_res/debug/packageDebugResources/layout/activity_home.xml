@@ -15,7 +15,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="NaviPark"
+            android:text="NaviPark Menu"
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="@color/primary"/>
@@ -32,49 +32,25 @@
             android:layout_marginStart="8dp"/>
     </LinearLayout>
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_marginBottom="16dp"
-        android:background="#E0E0E0">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Map View Placeholder"
-            android:layout_gravity="center"
-            android:textStyle="italic"/>
-    </FrameLayout>
-    
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Available Bays"
+        android:text="Current Location: Nelspruit"
         android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="8dp"/>
+        android:textStyle="italic"
+        android:layout_marginBottom="24dp"
+        android:drawablePadding="8dp"/>
 
-    <LinearLayout
+    <Button
+        android:id="@+id/btnParkNow"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="16dp">
-        <Button
-            android:id="@+id/btnBay1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Bay 1"
-            android:backgroundTint="@color/green_free"
-            android:layout_marginEnd="8dp"/>
-        <Button
-            android:id="@+id/btnBay2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Bay 2"
-            android:backgroundTint="@color/red_taken"
-            android:enabled="false"/>
-    </LinearLayout>
+        android:layout_height="80dp"
+        android:text="PARK NOW"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:backgroundTint="@color/accent"
+        android:textColor="@color/black"
+        android:layout_marginBottom="32dp"/>
 
     <TextView
         android:layout_width="wrap_content"

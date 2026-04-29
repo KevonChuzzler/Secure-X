@@ -10,7 +10,8 @@ import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,15 +22,22 @@ public class BookingActivity extends AppCompatActivity {
     private String selectedDate = "";
     private String selectedTime = "";
     private Calendar bookingCalendar = Calendar.getInstance();
+    private String selectedBay = "Unknown Bay";
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking);
         
+        selectedBay = getIntent().getStringExtra("selected_bay");
+        if (selectedBay == null) selectedBay = "Bay 1";
+        
+        TextView tvSelectedBay = findViewById(R.id.tvSelectedBay);
+        tvSelectedBay.setText("Selected Location: " + selectedBay);
+        
         Button btnSelectDate = findViewById(R.id.btnSelectDate);
         Button btnSelectTime = findViewById(R.id.btnSelectTime);
-        EditText etDuration = findViewById(R.id.etDuration);
+        Spinner spnDuration = findViewById(R.id.spnDuration);
         Button btnConfirmBooking = findViewById(R.id.btnConfirmBooking);
         
         btnSelectDate.setOnClickListener(v -> {
@@ -52,37 +60,44 @@ public class BookingActivity extends AppCompatActivity {
         });
         
         btnConfirmBooking.setOnClickListener(v -> {
-            String durationStr = etDuration.getText().toString();
-            
-            if (selectedDate.isEmpty() || selectedTime.isEmpty() || durationStr.isEmpty()) {
-                Toast.makeText(this, "Please fill in all details (Date, Time, Hours)", Toast.LENGTH_SHORT).show();
+            if (selectedDate.isEmpty() || selectedTime.isEmpty()) {
+                Toast.makeText(this, "Please select Date and Time", Toast.LENGTH_SHORT).show();
                 return;
             }
             
-            int hours = Integer.parseInt(durationStr);
-            int totalPrice = calculatePrice(bookingCalendar, hours);
+            int durationMins = 30; // Default
+            String selectedDuration = spnDuration.getSelectedItem().toString();
+            switch (selectedDuration) {
+                case "30 minutes": durationMins = 30; break;
+                case "1 hour": durationMins = 60; break;
+                case "1.5 hours": durationMins = 90; break;
+                case "2 hours": durationMins = 120; break;
+                case "2.5 hours": durationMins = 150; break;
+                case "3 hours": durationMins = 180; break;
+            }
+            
+            double totalPrice = calculatePrice(bookingCalendar, durationMins);
             
             long startMs = bookingCalendar.getTimeInMillis();
-            long endMs = startMs + (hours * 3600000L);
+            long endMs = startMs + (durationMins * 60000L);
             
             SharedPreferences prefs = getSharedPreferences("NaviParkPrefs", MODE_PRIVATE);
             String userEmail = prefs.getString("email", "");
             
             DatabaseHelper dbHelper = new DatabaseHelper(BookingActivity.this);
-            dbHelper.addBooking(userEmail, "Bay 1", startMs, endMs, totalPrice);
+            dbHelper.addBooking(userEmail, selectedBay, startMs, endMs, totalPrice);
             
-            scheduleReminders(hours);
+            scheduleReminders(durationMins);
             
             Intent intent = new Intent(BookingActivity.this, PaymentActivity.class);
             intent.putExtra("date", selectedDate);
             intent.putExtra("time", selectedTime);
-            intent.putExtra("totalPrice", totalPrice);
+            intent.putExtra("totalPrice", (int) Math.round(totalPrice));
             startActivity(intent);
         });
     }
 
-    private int calculatePrice(Calendar startCal, int durationHours) {
-        int totalMinutes = durationHours * 60;
+    private double calculatePrice(Calendar startCal, int totalMinutes) {
         double totalPrice = 0;
         
         for (int m = 0; m < totalMinutes; m++) {
@@ -107,15 +122,15 @@ public class BookingActivity extends AppCompatActivity {
             
             totalPrice += isHighTraffic ? (35.0 / 60.0) : (25.0 / 60.0);
         }
-        return (int) Math.round(totalPrice);
+        return totalPrice;
     }
 
-    private void scheduleReminders(int durationHours) {
+    private void scheduleReminders(int durationMins) {
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         if (alarmManager == null) return;
 
         Calendar endTime = (Calendar) bookingCalendar.clone();
-        endTime.add(Calendar.HOUR_OF_DAY, durationHours);
+        endTime.add(Calendar.MINUTE, durationMins);
 
         Calendar reminder15 = (Calendar) endTime.clone();
         reminder15.add(Calendar.MINUTE, -15);
@@ -126,9 +141,10 @@ public class BookingActivity extends AppCompatActivity {
         Calendar testReminder = Calendar.getInstance();
         testReminder.add(Calendar.SECOND, 10);
 
-        setAlarm(alarmManager, reminder15.getTimeInMillis(), 1, "Your parking time ends in 15 minutes.", false);
+        if (durationMins > 15) {
+            setAlarm(alarmManager, reminder15.getTimeInMillis(), 1, "Your parking time ends in 15 minutes.", false);
+        }
         setAlarm(alarmManager, reminder5.getTimeInMillis(), 2, "Your parking time ends in 5 minutes! Tap to extend.", true);
-        
         setAlarm(alarmManager, testReminder.getTimeInMillis(), 3, "[TEST] Your parking time is almost up! Tap to extend.", true);
         
         Toast.makeText(this, "Reminders Scheduled!", Toast.LENGTH_SHORT).show();

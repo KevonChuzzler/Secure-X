@@ -29,7 +29,7 @@ public class HomeActivity extends AppCompatActivity {
         
         Button btnProfile = findViewById(R.id.btnProfile);
         Button btnMyCars = findViewById(R.id.btnMyCars);
-        Button btnBay1 = findViewById(R.id.btnBay1); 
+        Button btnParkNow = findViewById(R.id.btnParkNow);
         ListView lvActiveBookings = findViewById(R.id.lvActiveBookings);
         
         bookingsList = new ArrayList<>();
@@ -38,12 +38,7 @@ public class HomeActivity extends AppCompatActivity {
         
         btnProfile.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, ProfileActivity.class)));
         btnMyCars.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, MyCarsActivity.class)));
-        
-        btnBay1.setOnClickListener(v -> {
-            Intent intent = new Intent(HomeActivity.this, BookingActivity.class);
-            intent.putExtra("selected_bay", "Bay 1");
-            startActivity(intent);
-        });
+        btnParkNow.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, ParkActivity.class)));
     }
 
     @Override

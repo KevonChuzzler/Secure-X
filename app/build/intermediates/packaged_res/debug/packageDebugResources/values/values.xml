@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string-array name="duration_options">
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>1.5 hours</item>
+        <item>2 hours</item>
+        <item>2.5 hours</item>
+        <item>3 hours</item>
+    </string-array>
+    <string-array name="vehicle_types">
+        <item>Car</item>
+        <item>Motorbike</item>
+        <item>Bakkie</item>
+    </string-array>
     <color name="accent">#FFCA28</color>
     <color name="background">#F5F5F5</color>
     <color name="black">#000000</color>

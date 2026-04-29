@@ -16,9 +16,10 @@
         android:layout_marginBottom="24dp"/>
 
     <TextView
+        android:id="@+id/tvSelectedBay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Selected Bay: Bay 1"
+        android:text="Selected Location: "
         android:textSize="18sp"
         android:layout_marginBottom="16dp"/>
         
@@ -44,23 +45,21 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Duration (Hours):"
+        android:text="Duration:"
         android:textSize="16sp"
         android:textStyle="bold"
         android:layout_marginTop="16dp"/>
 
-    <EditText
-        android:id="@+id/etDuration"
+    <Spinner
+        android:id="@+id/spnDuration"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:hint="Enter hours (e.g. 2)"
-        android:minHeight="48dp"/>
+        android:layout_height="48dp"
+        android:entries="@array/duration_options"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="High Traffic Rate (R35/hr) applies Weekdays 16:30-19:30 and Saturdays 13:00-21:00. Standard rate is R25/hr."
+        android:text="High Traffic Rate (R35/hr) applies Weekdays 16:30-19:30 and Saturdays 13:00-21:00. Standard rate is R25/hr. Pricing is calculated per 30-min segment."
         android:layout_marginTop="16dp"
         android:textStyle="italic"
         android:textColor="#555555"/>

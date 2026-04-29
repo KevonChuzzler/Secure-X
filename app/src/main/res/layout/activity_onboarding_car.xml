@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="32dp"
+    android:background="@color/white">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Your Vehicle"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/primary"
+        android:layout_marginBottom="24dp"/>
+
+    <EditText android:id="@+id/etMake" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Make (e.g. Toyota)" android:minHeight="48dp" android:layout_marginBottom="8dp"/>
+    <EditText android:id="@+id/etModel" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Model (e.g. Hilux)" android:minHeight="48dp" android:layout_marginBottom="8dp"/>
+    <EditText android:id="@+id/etYear" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Year" android:inputType="number" android:minHeight="48dp" android:layout_marginBottom="8dp"/>
+    <EditText android:id="@+id/etColor" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Color" android:minHeight="48dp" android:layout_marginBottom="8dp"/>
+    <EditText android:id="@+id/etPlate" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Numberplate" android:minHeight="48dp" android:layout_marginBottom="8dp"/>
+    
+    <Spinner
+        android:id="@+id/spnType"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="24dp"
+        android:entries="@array/vehicle_types"/>
+
+    <Button
+        android:id="@+id/btnAddAnother"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save &amp; Add Another"
+        android:backgroundTint="@color/background"
+        android:textColor="@color/black"
+        android:layout_marginBottom="8dp"/>
+
+    <Button
+        android:id="@+id/btnFinish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Finish &amp; Go to App"
+        android:backgroundTint="@color/primary"/>
+
+</LinearLayout>

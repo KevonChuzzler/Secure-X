@@ -32,13 +32,20 @@
         android:inputType="textPassword"
         android:layout_marginTop="16dp"
         android:minHeight="48dp"/>
+        
+    <CheckBox
+        android:id="@+id/cbRememberMe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Remember Me"
+        android:layout_marginTop="8dp"/>
 
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/login"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="@color/primary"/>
 
     <Button

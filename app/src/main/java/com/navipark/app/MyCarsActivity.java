@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
@@ -30,8 +31,10 @@ public class MyCarsActivity extends AppCompatActivity {
         ListView lvCars = findViewById(R.id.lvCars);
         EditText etMake = findViewById(R.id.etMake);
         EditText etModel = findViewById(R.id.etModel);
+        EditText etYear = findViewById(R.id.etYear);
         EditText etColor = findViewById(R.id.etColor);
         EditText etPlate = findViewById(R.id.etPlate);
+        Spinner spnType = findViewById(R.id.spnType);
         Button btnAddCar = findViewById(R.id.btnAddCar);
         
         carsList = new ArrayList<>();
@@ -43,17 +46,19 @@ public class MyCarsActivity extends AppCompatActivity {
         btnAddCar.setOnClickListener(v -> {
             String make = etMake.getText().toString();
             String model = etModel.getText().toString();
+            String year = etYear.getText().toString();
             String color = etColor.getText().toString();
             String plate = etPlate.getText().toString();
+            String type = spnType.getSelectedItem().toString();
             
             if (make.isEmpty() || model.isEmpty() || plate.isEmpty()) {
                 Toast.makeText(this, "Please fill required car details", Toast.LENGTH_SHORT).show();
                 return;
             }
             
-            if (dbHelper.addCar(userEmail, make, model, color, plate)) {
+            if (dbHelper.addCar(userEmail, make, model, color, plate, year, type)) {
                 Toast.makeText(this, "Car added!", Toast.LENGTH_SHORT).show();
-                etMake.setText(""); etModel.setText(""); etColor.setText(""); etPlate.setText("");
+                etMake.setText(""); etModel.setText(""); etYear.setText(""); etColor.setText(""); etPlate.setText("");
                 loadCars();
             } else {
                 Toast.makeText(this, "Error adding car", Toast.LENGTH_SHORT).show();
@@ -69,7 +74,8 @@ public class MyCarsActivity extends AppCompatActivity {
                 String make = cursor.getString(cursor.getColumnIndexOrThrow("make"));
                 String model = cursor.getString(cursor.getColumnIndexOrThrow("model"));
                 String plate = cursor.getString(cursor.getColumnIndexOrThrow("numberplate"));
-                carsList.add(make + " " + model + " [" + plate + "]");
+                String type = cursor.getString(cursor.getColumnIndexOrThrow("vehicle_type"));
+                carsList.add(make + " " + model + " (" + type + ") [" + plate + "]");
             } while (cursor.moveToNext());
         }
         cursor.close();
