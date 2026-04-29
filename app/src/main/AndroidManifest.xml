@@ -18,6 +18,10 @@
         </activity>
         
         <activity android:name=".LoginActivity" android:exported="false" />
+        <activity android:name=".ExtendTimeActivity" android:exported="false" />
+        <activity android:name=".ProfileActivity" android:exported="false" />
+        <activity android:name=".MyCarsActivity" android:exported="false" />
+        <receiver android:name=".NotificationReceiver" android:exported="false" />
         <activity android:name=".HomeActivity" android:exported="false" />
         <activity android:name=".BookingActivity" android:exported="false" />
         <activity android:name=".PaymentActivity" android:exported="false" />

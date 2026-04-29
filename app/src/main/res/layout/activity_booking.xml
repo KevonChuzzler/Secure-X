@@ -56,14 +56,14 @@
         android:inputType="number"
         android:hint="Enter hours (e.g. 2)"
         android:minHeight="48dp"/>
-        
-    <CheckBox
-        android:id="@+id/cbHighTraffic"
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="High Traffic Day (R35/hr instead of R25/hr)"
+        android:text="High Traffic Rate (R35/hr) applies Weekdays 16:30-19:30 and Saturdays 13:00-21:00. Standard rate is R25/hr."
         android:layout_marginTop="16dp"
-        android:minHeight="48dp"/>
+        android:textStyle="italic"
+        android:textColor="#555555"/>
 
     <Button
         android:id="@+id/btnConfirmBooking"

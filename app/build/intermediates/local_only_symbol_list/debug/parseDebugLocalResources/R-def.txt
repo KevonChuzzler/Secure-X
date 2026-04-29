@@ -11,7 +11,9 @@ color white
 id btnBay1
 id btnBay2
 id btnConfirmBooking
+id btnExtend1Hour
 id btnLogin
+id btnNoThanks
 id btnPay
 id btnRegister
 id btnSelectDate
@@ -25,6 +27,7 @@ id etExpiry
 id etPassword
 id tvTotalAmount
 layout activity_booking
+layout activity_extend_time
 layout activity_home
 layout activity_login
 layout activity_main
