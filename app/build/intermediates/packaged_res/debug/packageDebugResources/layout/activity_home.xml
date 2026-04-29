@@ -6,29 +6,43 @@
     android:padding="16dp"
     android:background="@color/white">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Find Your Spot"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="@color/primary"
-        android:layout_marginBottom="16dp"/>
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="NaviPark"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary"/>
+        <Button
+            android:id="@+id/btnProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Profile"/>
+        <Button
+            android:id="@+id/btnMyCars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cars"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
 
-    <!-- Map Placeholder -->
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="150dp"
         android:layout_marginBottom="16dp"
         android:background="#E0E0E0">
-        
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Google Maps / Map View Placeholder"
+            android:text="Map View Placeholder"
             android:layout_gravity="center"
             android:textStyle="italic"/>
-            
     </FrameLayout>
     
     <TextView
@@ -42,7 +56,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
         <Button
             android:id="@+id/btnBay1"
             android:layout_width="0dp"
@@ -60,5 +75,19 @@
             android:backgroundTint="@color/red_taken"
             android:enabled="false"/>
     </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My Active Bookings"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"/>
+
+    <ListView
+        android:id="@+id/lvActiveBookings"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
 
 </LinearLayout>
